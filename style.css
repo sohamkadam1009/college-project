@@ -1,0 +1,313 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-container:hover {
+  transform: translateY(-5px);
+}
+
+.upper-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Input Section */
+.input-area {
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-area:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.input-area label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-area input[type="text"] {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.input-area input[type="text"]:focus {
+  border-color: #4CAF50;
+}
+
+/* BHK and Bathrooms Section */
+.select-bhk, .select-bathrooms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.BHK-label, .bathrooms-label {
+  width: 100px;
+  margin-right: 20px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.bhk-btn, .bathrooms-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.bhk-btn:hover, .bathrooms-btn:hover {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+}
+
+
+.bhk-btn.active, .bathrooms-btn.active {
+  background-color: #3e8e41;
+  transform: scale(1.1);
+}
+
+
+/* Location Section */
+.location {
+  margin-bottom: 20px;
+}
+
+.location select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.location select:focus {
+  border-color: #4CAF50;
+}
+
+/* Output Section */
+.output-section {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.output-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.estimate-price-btn {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.estimate-price-btn:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+.output {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.information-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Feedback Section */
+.feedback-section {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.feedback {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.feedback:focus {
+  border-color: #4CAF50;
+}
+
+.feedback-lbl {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.submit-btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+/* Graph and Map Section */
+.section-area {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.graph-section, .map-section {
+  height: 350px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graph-section:hover, .map-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .main-container {
+      max-width: 90%;
+  }
+
+  .upper-section {
+      flex-direction: column;
+  }
+
+  .input-area, .section-area {
+      width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+      max-width: 100%;
+  }
+
+  .graph-section, .map-section {
+      height: 300px;
+  }
+
+  .estimate-price-btn, .submit-btn {
+      height: 50px;
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bhk-btn, .bathrooms-btn {
+      width: 35px;
+      height: 35px;
+  }
+
+  .graph-section, .map-section {
+      height: 250px;
+  }
+
+  .feedback {
+      height: 80px;
+  }
+
+  .estimate-price-btn, .submit-btn {
+      height: 60px;
+      font-size: 20px;
+  }
+
+  .BHK-label, .bathrooms-label {
+      width: 80px;
+  }
+}
