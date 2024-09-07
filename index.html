@@ -7,76 +7,82 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <div class="mainwithh1">
+    <h1>Estate Estimator</h1>
     <div id="container" class="main-container">
-        <!-- Upper section-->
+        <!-- Upper section -->
         <div class="upper-section">
-            <!-- Input section -->
-            <div id="selection-area" class="input-area">
-                <label for="area-input">AREA (in sq. feet)</label>
-                <input type="text" id="area-input">
+            <div class="selectionfeedback">
+                <!-- Input section -->
+                <div id="selection-area" class="input-area">
+                    <label for="area-input">AREA (in sq. feet)</label>
+                    <input type="text" id="area-input">
 
-                <div id="selection-buttons" class="select-bhk">
-                    <label for="bhk-btns" class="BHK-label">BHK</label>
-                    <div id="bhk-btns" class="button-group">
-                        <button class="bhk-btn">1</button>
-                        <button class="bhk-btn">2</button>
-                        <button class="bhk-btn">3</button>
-                        <button class="bhk-btn">4</button>
-                        <button class="bhk-btn">5</button>
+                    <div id="selection-buttons" class="select-bhk">
+                        <label for="bhk-btns" class="BHK-label">BHK</label>
+                        <div id="bhk-btns" class="button-group">
+                            <button class="bhk-btn">1</button>
+                            <button class="bhk-btn">2</button>
+                            <button class="bhk-btn">3</button>
+                            <button class="bhk-btn">4</button>
+                            <button class="bhk-btn">5</button>
+                        </div>
                     </div>
-                </div>
 
-                <div id="selection-bathrooms" class="select-bathrooms">
-                    <label for="bathroom-btns" class="bathrooms-label">Bathrooms</label>
-                    <div id="bathroom-btns" class="button-group">
-                        <button class="bathrooms-btn">1</button>
-                        <button class="bathrooms-btn">2</button>
-                        <button class="bathrooms-btn">3</button>
-                        <button class="bathrooms-btn">4</button>
-                        <button class="bathrooms-btn">5</button>
+                    <div id="selection-bathrooms" class="select-bathrooms">
+                        <label for="bathroom-btns" class="bathrooms-label">Bathrooms</label>
+                        <div id="bathroom-btns" class="button-group">
+                            <button class="bathrooms-btn">1</button>
+                            <button class="bathrooms-btn">2</button>
+                            <button class="bathrooms-btn">3</button>
+                            <button class="bathrooms-btn">4</button>
+                            <button class="bathrooms-btn">5</button>
+                        </div>
                     </div>
+
+                    <div class="location">
+                        <label for="location-id">Select Location:</label>
+                        <select id="location-id" name="location">
+                            <option value="">Select Location</option>
+                            <option value="Kothrud">Kothrud</option>
+                            <option value="Swargate">Swargate</option>
+                            <!-- Add more options here -->
+                        </select>
+                    </div>
+
+                    <section class="output-section">
+                        <button type="submit" class="estimate-price-btn">Estimate Price</button>
+                        <div class="output">Output/Estimated Price</div>
+                        <p class="information-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error architecto et cupiditate quasi dolor accusantium eos odio vitae iste itaque.
+                        </p>
+                    </section>
                 </div>
 
-                <div class="location">
-                    <label for="location-id">Select Location:</label>
-                    <select id="location-id" name="location">
-                        <option value="">Select Location</option>
-                        <option value="Kothrud">Kothrud</option>
-                        <option value="Swargate">Swargate</option>
-                        <!-- Add more options here -->
-                    </select>
-                </div>
-
-                <section class="output-section">
-                    <button type="submit" class="estimate-price-btn">Estimate Price</button>
-                    <div class="output">Output/Estimated Price</div>
-                    <p class="information-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error architecto et cupiditate quasi dolor accusantium eos odio vitae iste itaque.
-                    </p>
-                </section>
-
-                <section class="feedback-section">
-                    <label class="feedback-lbl">Feedback Section</label>
-                    <textarea class="feedback"></textarea>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </section>
+                <!-- Feedback Section -->
+                 
+                    <section class="feedback-section">
+                        <label class="feedback-lbl">Feedback Section</label>
+                        <textarea class="feedback"></textarea>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </section>
+        
             </div>
-
             <!-- Graph and map section -->
             <section id="side-section" class="section-area">
                 <section class="map-section">
                     <!-- Google Maps embedded code -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711156077!2d73.78056543154413!3d18.524598599502376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724701433256!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711156077!2d73.78056543154413!3d18.524598599502376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724701433256!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
-
                 <section class="graph-section">
                     <!-- Place the graph here -->
                 </section>
-
             </section>
         </div>
     </div>
+</div>
 </body>
 </html>
 
 <script src="./script.js"></script>
+
