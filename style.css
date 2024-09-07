@@ -27,12 +27,13 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
   transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #3E5151;
+  color:#344242;
   text-align: center;
   margin: 0;
   padding-bottom: 20px;
@@ -43,6 +44,7 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+
 }
 
 .main-container:hover {
@@ -139,7 +141,7 @@ h1 {
 }
 
 .bhk-btn.active, .bathrooms-btn.active {
-  background-color: #2C3E3E;
+  background-color: #669f9f;
   transform: scale(1.1);
 }
 
