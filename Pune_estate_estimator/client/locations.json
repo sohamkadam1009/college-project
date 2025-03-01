@@ -1,0 +1,24 @@
+{
+  "locations": [
+    {
+      "name": "Kothrud",
+      "description": "Kothrud is a well-developed residential area located in Pune. It is known for its educational institutions, cultural heritage, and vibrant community life."
+    },
+    {
+      "name": "kothrud",
+      "description": "Kothrud is a well-developed residential area located in Pune. It is known for its educational institutions, cultural heritage, and vibrant community life."
+    },
+    {
+      "name": "Shaniwar Wada",
+      "description": "Shaniwar Wada was once a stately mansion built by Bajirao I in 1730 AD. It offers a glimpse into the grand past of the Peshwas."
+    },
+    {
+      "name": "Aga Khan Palace",
+      "description": "Aga Khan Palace is known for its architectural excellence and historical significance. It is the headquarters of the Gandhi National Memorial Society."
+    },
+    {
+      "name": "Osho Ashram",
+      "description": "A tranquil place for meditation and peace, following the ideologies of Osho."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pune Estate Estimator</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="mainwithh1">
+      <h1>Pune's Estate Estimator</h1>
+      <div id="container" class="main-container">
+        <!-- Upper section -->
+        <div class="upper-section">
+          <div class="selectionfeedback">
+            <!-- Input section -->
+            <div id="selection-area" class="input-area">
+              <form class="form">
+                <label for="area-input">AREA (in sq. feet)</label>
+                <input type="text" id="area-input" />
+                <div id="selection-buttons" class="select-bhk">
+                  <label for="bhk-btns" class="BHK-label">BHK</label>
+                  <div class="switch-field">
+                    <input
+                      type="radio"
+                      id="radio-bhk-1"
+                      name="uiBHK"
+                      value="1"
+                    />
+                    <label for="radio-bhk-1">1</label>
+                    <input
+                      type="radio"
+                      id="radio-bhk-2"
+                      name="uiBHK"
+                      value="2"
+                    />
+                    <label for="radio-bhk-2">2</label>
+                    <input
+                      type="radio"
+                      id="radio-bhk-3"
+                      name="uiBHK"
+                      value="3"
+                    />
+                    <label for="radio-bhk-3">3</label>
+                    <input
+                      type="radio"
+                      id="radio-bhk-4"
+                      name="uiBHK"
+                      value="4"
+                    />
+                    <label for="radio-bhk-4">4</label>
+                    <input
+                      type="radio"
+                      id="radio-bhk-5"
+                      name="uiBHK"
+                      value="5"
+                    />
+                    <label for="radio-bhk-5">5</label>
+                  </div>
+                </div>
+              </form>
+              <form class="form">
+                <div id="selection-bathrooms" class="select-bathrooms">
+                  <label for="bathroom-btns" class="bathrooms-label"
+                    >Bathrooms</label
+                  >
+                  <div class="switch-field">
+                    <input
+                      type="radio"
+                      id="radio-bath-1"
+                      name="uiBathrooms"
+                      value="1"
+                    />
+                    <label for="radio-bath-1">1</label>
+                    <input
+                      type="radio"
+                      id="radio-bath-2"
+                      name="uiBathrooms"
+                      value="2"
+                    />
+                    <label for="radio-bath-2">2</label>
+                    <input
+                      type="radio"
+                      id="radio-bath-3"
+                      name="uiBathrooms"
+                      value="3"
+                    />
+                    <label for="radio-bath-3">3</label>
+                    <input
+                      type="radio"
+                      id="radio-bath-4"
+                      name="uiBathrooms"
+                      value="4"
+                    />
+                    <label for="radio-bath-4">4</label>
+                    <input
+                      type="radio"
+                      id="radio-bath-5"
+                      name="uiBathrooms"
+                      value="5"
+                    />
+                    <label for="radio-bath-5">5</label>
+                  </div>
+                </div>
+                <div class="location">
+                  <label for="location-id">Select Location:</label>
+                  <select class="location" id="location-id" name="location">
+                    <option value="" disabled="disabled" selected="selected">
+                      Select a Location
+                    </option>
+                    <option value="Kothrud">Kothrud</option>
+                    <option value="Swargate">Swargate</option>
+                    <!-- Add more options here -->
+                  </select>
+                </div>
+              </form>
+              <section class="output-section">
+                <button
+                  id="est-btn"
+                  type="button"
+                  class="estimate-price-btn"
+                  onclick="onClickedEstimatePrice();"
+                >
+                  Estimate Price
+                </button>
+                <div class="output" id="uiEstimatedPrice"><h2></h2></div>
+                <p class="information-text" id="location-description">
+                  Get instant, accurate property estimates in Pune with Pune
+                  Estate Estimator. Simply enter your details to discover your
+                  property's true value. Start now!
+                </p>
+              </section>
+            </div>
+
+            <!-- Feedback Section -->
+
+            <section class="feedback-section">
+              <label class="feedback-lbl">Feedback Section</label>
+              <textarea class="feedback" id="feedback-text" placeholder="Enter your feedback..." maxlength="1000"></textarea>
+              <button type="submit" class="submit-btn" id="feedback-submit">Submit</button>
+            </section>
+          </div>
+          <!-- Graph and map section -->
+          <section id="side-section" class="section-area">
+            <section class="map-section">
+              <!-- Google Maps embedded code -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711156077!2d73.78056543154413!3d18.524598599502376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724701433256!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </section>
+            <section class="graph-section">
+              <img class="graph" src="heatmap.png" />
+            </section>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="validations.js"></script>
+  <script src="app.js"></script>
+  <script src="jquery.min.js"></script>
+</html>

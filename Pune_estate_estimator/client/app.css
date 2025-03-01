@@ -9,7 +9,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: url('./pexels-pixabay-280221.jpg');
+  background: url("./pexels-pixabay-280221.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@ body {
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color:#344242;
+  color: #344242;
   text-align: center;
   margin: 0;
   padding-bottom: 20px;
@@ -44,7 +44,6 @@ h1 {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-
 }
 
 .main-container:hover {
@@ -58,7 +57,8 @@ h1 {
   gap: 20px;
 }
 
-.selection-area, .side-section {
+.selection-area,
+.side-section {
   width: 50%;
 }
 
@@ -72,11 +72,15 @@ h1 {
 .input-area {
   width: 100%;
   padding: 20px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, rgba(255, 182, 102, 0.7), rgba(135, 206, 250, 0.7));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 102, 0.7),
+    rgba(135, 206, 250, 0.7)
+  );
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -88,7 +92,7 @@ h1 {
 .input-area label {
   display: block;
   margin-bottom: 10px;
-  color: #3E5151;
+  color: #3e5151;
 }
 
 .input-area input[type="text"] {
@@ -96,53 +100,64 @@ h1 {
   height: 40px;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   transition: border-color 0.3s ease;
 }
 
 .input-area input[type="text"]:focus {
-  border-color: #3E5151;
+  border-color: #3e5151;
 }
 
 /* BHK and Bathrooms Section */
-.select-bhk, .select-bathrooms {
+.select-bhk,
+.select-bathrooms {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
-
-.BHK-label, .bathrooms-label {
+.BHK-label,
+.bathrooms-label {
   width: 100px;
   margin-right: 20px;
   text-align: left;
   font-weight: bold;
-  color: #3E5151;
+  color: #3e5151;
 }
 
-.button-group {
+.switch-field {
   display: flex;
   gap: 10px;
+  overflow: hidden;
 }
 
-.bhk-btn, .bathrooms-btn {
-  width: 40px;
-  height: 40px;
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #3e5151;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 8px 16px;
   border: none;
   border-radius: 50%;
-  background-color: #3E5151;
-  color: #FFFFFF;
-  cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.bhk-btn:hover, .bathrooms-btn:hover {
-  background-color: #2C3E3E;
-  transform: scale(1.1);
+.switch-field label:hover {
+  cursor: pointer;
+  background-color: #072727;
+  /* transform: scale(1.1); */
 }
 
-.bhk-btn.active, .bathrooms-btn.active {
+.switch-field input:checked + label {
   background-color: #669f9f;
-  transform: scale(1.1);
 }
 
 /* Location Section */
@@ -154,21 +169,21 @@ h1 {
   width: 100%;
   height: 40px;
   padding: 10px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   transition: border-color 0.3s ease;
 }
 
 .location select:focus {
-  border-color: #3E5151;
+  border-color: #3e5151;
 }
 
 /* Output Section */
 .output-section {
   width: 100%;
   padding: 20px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -185,14 +200,14 @@ h1 {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #3E5151;
-  color: #FFFFFF;
+  background-color: #3e5151;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .estimate-price-btn:hover {
-  background-color: #2C3E3E;
+  background-color: #2c3e3e;
   transform: scale(1.05);
 }
 
@@ -212,9 +227,13 @@ h1 {
 .feedback-section {
   width: 100%;
   padding: 20px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
-  background: linear-gradient(135deg, rgba(255, 182, 102, 0.8), rgba(135, 206, 250, 0.8));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 102, 0.8),
+    rgba(135, 206, 250, 0.8)
+  );
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -228,18 +247,18 @@ h1 {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
   transition: border-color 0.3s ease;
 }
 
 .feedback:focus {
-  border-color: #3E5151;
+  border-color: #3e5151;
 }
 
 .feedback-lbl {
   font-size: 25px;
   font-weight: bold;
-  color: #3E5151;
+  color: #3e5151;
 }
 
 .submit-btn {
@@ -249,15 +268,19 @@ h1 {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #3E5151;
-  color: #FFFFFF;
+  background-color: #3e5151;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-btn:hover {
-  background-color: #2C3E3E;
+  background-color: #2c3e3e;
   transform: scale(1.05);
+}
+
+textarea {
+  resize: none;
 }
 
 /* Graph and Map Section */
@@ -270,18 +293,24 @@ h1 {
   width: 50%;
 }
 
-.graph-section, .map-section {
+.graph-section,
+.map-section {
   height: 100%;
   width: 100%;
-  background: linear-gradient(135deg, rgba(255, 182, 102, 0.8), rgba(135, 206, 250, 0.8));
-  border: 1px solid #C4C4C4;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 182, 102, 0.8),
+    rgba(135, 206, 250, 0.8)
+  );
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
 }
 
-.graph-section:hover, .map-section:hover {
+.graph-section:hover,
+.map-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -291,9 +320,12 @@ h1 {
   height: 100%;
   border: none;
 }
-
-
-textarea, input, select {
+.graph {
+  width: 100%;
+}
+textarea,
+input,
+select {
   background-color: rgba(254, 254, 254, 0.55);
 }
 
@@ -316,7 +348,10 @@ textarea, input, select {
   .upper-section {
     flex-direction: column;
   }
-  .selectionfeedback, .input-area, .output-section, .feedback-section {
+  .selectionfeedback,
+  .input-area,
+  .output-section,
+  .feedback-section {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -329,7 +364,8 @@ textarea, input, select {
     width: 100%;
     box-sizing: border-box; /* Include padding and border in width calculation */
   }
-  .map-section, .graph-section {
+  .map-section,
+  .graph-section {
     width: 100%; /* Ensure equal width */
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -338,10 +374,14 @@ textarea, input, select {
 
 /* Mobile */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  .mainwithh1, .upper-section {
+  .mainwithh1,
+  .upper-section {
     flex-direction: column;
   }
-  .selectionfeedback, .input-area, .output-section, .feedback-section {
+  .selectionfeedback,
+  .input-area,
+  .output-section,
+  .feedback-section {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -354,7 +394,8 @@ textarea, input, select {
     width: 100%;
     box-sizing: border-box; /* Include padding and border in width calculation */
   }
-  .map-section, .graph-section {
+  .map-section,
+  .graph-section {
     width: 100%; /* Ensure equal width */
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -363,10 +404,14 @@ textarea, input, select {
 
 /* Small Mobile */
 @media only screen and (max-width: 510px) {
-  .mainwithh1, .upper-section {
+  .mainwithh1,
+  .upper-section {
     flex-direction: column;
   }
-  .selectionfeedback, .input-area, .output-section, .feedback-section {
+  .selectionfeedback,
+  .input-area,
+  .output-section,
+  .feedback-section {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
@@ -379,7 +424,8 @@ textarea, input, select {
     width: 100%;
     box-sizing: border-box; /* Include padding and border in width calculation */
   }
-  .map-section, .graph-section {
+  .map-section,
+  .graph-section {
     width: 100%; /* Ensure equal width */
     margin: 0 auto;
     box-sizing: border-box; /* Include padding and border in width calculation */
