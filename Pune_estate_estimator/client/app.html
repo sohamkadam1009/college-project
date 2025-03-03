@@ -105,7 +105,7 @@
                 <div class="location">
                   <label for="location-id">Select Location:</label>
                   <select class="location" id="location-id" name="location">
-                    <option value="" disabled="disabled" selected="selected">
+                    <option value="Pune" selected=>
                       Select a Location
                     </option>
                     <option value="Kothrud">Kothrud</option>
@@ -145,7 +145,7 @@
             <section class="map-section">
               <!-- Google Maps embedded code -->
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121059.04711156077!2d73.78056543154413!3d18.524598599502376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1724701433256!5m2!1sen!2sin"
+                id="updateMap"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
@@ -161,5 +161,6 @@
   </body>
   <script src="validations.js"></script>
   <script src="app.js"></script>
+  <script src="dynamicMapLocations.js"></script>
   <script src="jquery.min.js"></script>
 </html>
