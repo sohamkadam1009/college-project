@@ -29,7 +29,7 @@ function validateInputs() {
   var selectedBathroomValue = Number(selectedBathroom.value);
 
   if (areaInputValue < 400 || areaInputValue > 6300) {
-    alert("Enter the area (sq.ft) between 400 and 7000");
+    alert("Enter the area (sq.ft) between 400 and 6300");
     return false; // Stop execution
   }
 
