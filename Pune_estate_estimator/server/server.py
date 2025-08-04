@@ -1,48 +1,52 @@
-from flask import Flask, jsonify, request
-import os                 # NEW
+from flask import (
+    Flask, jsonify, request,
+    render_template, send_from_directory
+)
+import os
 import util
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="../client",        # Point to client folder
+    template_folder="../client",      # HTML files in client folder
+    static_url_path=""
+)
 
+# ---------- Frontend Route ----------
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def index(path):
+    # Serve static files from client folder
+    file_path = os.path.join(app.static_folder, path)
+    if path and os.path.isfile(file_path):
+        return send_from_directory(app.static_folder, path)
+    
+    # Serve main HTML file (rename app.html to index.html)
+    return send_from_directory(app.static_folder, "index.html")
 
-@app.route('/get_location_names', methods=['GET'])
+# ---------- API Routes ----------
+@app.route("/get_location_names")
 def get_location_names():
-    response = jsonify({
-        'locations': util.get_location_names()
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return jsonify({"locations": util.get_location_names()})
 
-
-@app.route('/predict_home_price', methods=['GET', 'POST'])
+@app.route("/predict_home_price", methods=["POST"])
 def predict_home_price():
-    total_sqft = float(request.form['total_sqft'])
-    location = request.form['location']
-    bhk = int(request.form['bhk'])
-    bath = int(request.form['bath'])
+    data = request.form
+    price = util.get_estimated_price(
+        data["location"],
+        float(data["total_sqft"]),
+        int(data["bhk"]),
+        int(data["bath"])
+    )
+    return jsonify({"estimated_price": price})
 
-    response = jsonify({
-        'estimated_price': util.get_estimated_price(location, total_sqft, bhk, bath)
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
-
-
-@app.route('/get_location_description', methods=['GET', 'POST'])
+@app.route("/get_location_description", methods=["POST"])  
 def get_location_description():
-    location = request.form['location']
-    description = util.get_location_description(location)
-    response = jsonify({
-        'description': description
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
-
+    desc = util.get_location_description(request.form["location"])
+    return jsonify({"description": desc})
 
 if __name__ == "__main__":
-    print("Starting Python Flask Server for Pune Estate Estimator …")
+    print("Starting Python Flask Server for Pune Estate Estimator...")
     util.load_saved_artifacts()
-
-    # Use Render’s assigned port or default to 5000 locally
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)     # UPDATED
+    app.run(host="0.0.0.0", port=port)
