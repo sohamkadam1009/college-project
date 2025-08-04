@@ -21,7 +21,7 @@ def index(path):
     if path and os.path.isfile(file_path):
         return send_from_directory(app.static_folder, path)
     
-    # Serve main HTML file (rename app.html to index.html)
+    # Serve main HTML file
     return send_from_directory(app.static_folder, "index.html")
 
 # ---------- API Routes ----------
