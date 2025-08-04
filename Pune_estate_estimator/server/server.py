@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import os                 # NEW
 import util
 
 app = Flask(__name__)
@@ -10,7 +11,6 @@ def get_location_names():
         'locations': util.get_location_names()
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
-
     return response
 
 
@@ -25,7 +25,6 @@ def predict_home_price():
         'estimated_price': util.get_estimated_price(location, total_sqft, bhk, bath)
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
-
     return response
 
 
