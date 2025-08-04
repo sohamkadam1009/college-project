@@ -41,6 +41,9 @@ def get_location_description():
 
 
 if __name__ == "__main__":
-    print("Starting Python Flask Server for Pune Estate Estimator....")
+    print("Starting Python Flask Server for Pune Estate Estimator …")
     util.load_saved_artifacts()
-    app.run()
+
+    # Use Render’s assigned port or default to 5000 locally
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)     # UPDATED
