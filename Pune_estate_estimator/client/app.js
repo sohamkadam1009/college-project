@@ -1,79 +1,77 @@
+/* ---------- helper functions ---------- */
 function getBathValue() {
-  var uiBathrooms = document.getElementsByName("uiBathrooms");
-  for (var i in uiBathrooms) {
-    if (uiBathrooms[i].checked) {
-      return parseInt(i) + 1;
-    }
+  const uiBathrooms = document.getElementsByName("uiBathrooms");
+  for (const i in uiBathrooms) {
+    if (uiBathrooms[i].checked) return Number(i) + 1;
   }
-  return -1; // Invalid Value
+  return -1; // Invalid
 }
 
 function getBHKValue() {
-  var uiBHK = document.getElementsByName("uiBHK");
-  for (var i in uiBHK) {
-    if (uiBHK[i].checked) {
-      return parseInt(i) + 1;
-    }
+  const uiBHK = document.getElementsByName("uiBHK");
+  for (const i in uiBHK) {
+    if (uiBHK[i].checked) return Number(i) + 1;
   }
-  return -1; // Invalid Value
+  return -1; // Invalid
 }
 
+/* ---------- API base ("" = same origin) ---------- */
+const API = "";          // empty string → same domain/port that served index.html
+// If you ever need to test against localhost again, change to:
+// const API = "http://127.0.0.1:5000";
+
+/* ---------- estimate price ---------- */
 function onClickedEstimatePrice() {
   console.log("Estimate price button clicked");
 
   if (!window.validateInputs()) {
-    console.log("Validation failed. Price estimation stopped.");
-    return; // Stop execution if validation fails
+    console.log("Validation failed. Stopping request.");
+    return;
   }
-  
-  var sqft = document.getElementById("area-input");
-  var bhk = getBHKValue();
-  var bathrooms = getBathValue();
-  var location = document.getElementById("location-id");
-  var estPrice = document.getElementById("uiEstimatedPrice");
 
-  var url = "http://127.0.0.1:5000/predict_home_price";
+  const sqft      = document.getElementById("area-input");
+  const bhk       = getBHKValue();
+  const bathrooms = getBathValue();
+  const location  = document.getElementById("location-id");
+  const estPrice  = document.getElementById("uiEstimatedPrice");
+  const descBox   = document.getElementById("location-description");
+
+  /* POST /predict_home_price */
   $.post(
-    url,
+    `${API}/predict_home_price`,
     {
       total_sqft: parseFloat(sqft.value),
       bhk: bhk,
       bath: bathrooms,
       location: location.value,
     },
-    function (data, status) {
-      console.log(data.estimated_price);
-      estPrice.innerHTML =
-        "<h2>" +
-        (parseFloat(data.estimated_price.toString()) + 50).toFixed(2) +
-        " Lakh</h2>";
-      console.log(status);
+    function (data) {
+      const price = (parseFloat(data.estimated_price) + 50).toFixed(2);
+      estPrice.innerHTML = `<h2>₹${price} Lakh</h2>`;
     }
   );
-  console.log("Get Location Description button clicked");
-  var location = document.getElementById("location-id");
-  var descriptionElement = document.getElementById("location-description");
-  var url = "http://127.0.0.1:5000/get_location_description";
 
-  $.post(url, { location: location.value }, function (data, status) {
-    console.log("Location description: ", data.description);
-    descriptionElement.innerHTML = `<p>${data.description}</p>`;
-  });
+  /* POST /get_location_description */
+  $.post(
+    `${API}/get_location_description`,
+    { location: location.value },
+    function (data) {
+      descBox.innerHTML = `<p>${data.description}</p>`;
+    }
+  );
 }
 
+/* ---------- populate locations on load ---------- */
 function onPageLoad() {
   console.log("document loaded");
-  var url = "http://127.0.0.1:5000/get_location_names";
-  $.get(url, function (data, status) {
-    console.log("got response for get_location_names request");
-    if (data) {
-      var locations = data.locations;
-      var uiLocations = document.getElementById("location-id");
+
+  $.get(`${API}/get_location_names`, function (data) {
+    if (data && data.locations) {
+      const uiLocations = document.getElementById("location-id");
       $("#location-id").empty();
-      for (var i in locations) {
-        var opt = new Option(locations[i]);
-        $("#location-id").append(opt);
-      }
+      data.locations.forEach(function (loc) {
+        $("#location-id").append(new Option(loc));
+      });
     }
   });
 }
